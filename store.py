@@ -3,13 +3,13 @@ total_price = 0
 
 quantity_products = int(input("How many products do you want to register? "))
 
-for _ in range(quantity_products):
-    product = {}
-    product["id"] = int(input("Enter the product ID: "))
-    product["name"] = input("Enter the product name: ")
-    product["price"] = float(input("Enter the product price: "))
-    product["stock"] = int(input("Enter the product stock: "))
-    
+for i in range(quantity_products):
+    product = {
+        "id": i + 1,
+        "name": input("Enter the product name: "),
+        "price":  float(input("Enter the product price: ")),
+        "stock":  int(input("Enter the product stock: "))
+    }
    
     store.append(product)
    
@@ -31,6 +31,7 @@ for product in store:
 
      print("\nRegistered product data:")
      print(
+        f"\nId: {product["id"]}, "
         f"\nName: {product['name']}, "
         f"\nPrice: ${product['price']:.2f}, "
         f"\nStock: {product['stock']}"
