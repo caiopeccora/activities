@@ -17,6 +17,7 @@ print("\nChoose an option:")
 print("1 - Remove a book by ID")
 print("2 - Search book by title")
 print("3 - Show available books")
+print("4 - add a book")
 
 option = input("Option: ")
 
@@ -50,6 +51,17 @@ elif option == "3":
     else:
         print("No available books.")
 
+elif option == "4":
+    new_book = {
+        "id": len(library) + 1,
+        "title": input("Enter the title of the book: "),
+        "author": input("Enter the author of the book: "),
+        "pages": int(input("Enter the number of pages: ")),
+        "available": input("Is the book available? (yes/no): ").lower() == "yes"
+    }
+    library.append(new_book)
+    print("Book added successfully.")
+    
 else:
     print("Invalid option.")
 
